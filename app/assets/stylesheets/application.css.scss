@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+
+ a{
+   color: #FFFFFF;
+   text-decoration: none;
+   padding: 0px;
+   margin: 0px;
+ }
+
+ a:hover{
+   color: #FFFFFF;
+   text-decoration: none;
+ }
+
+
+ .grid{
+   display:grid;
+   grid-template-columns: 531px 1389px;
+   grid-template-areas: "sh mc";
+ }
+
+
+// side_hero css
+.side_hero{
+  grid-area: sh;
+  background: image-url("map.png") no-repeat left top;
+  width: 531px;
+  height: 900px;
+}
+
+.logo{
+  position: absolute;
+  width: 89px;
+  height: 15px;
+  top: 44px;
+  right: 48px;
+  bottom: 841px;
+  left: 394px;
+
+}
+
+.navigation{
+  position: relative;
+}
+
+.navigation ul{
+  position: absolute;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  top: 370px;
+  right: 0px;
+  bottom:480px;
+  left: 389px;
+}
+
+.navigation li{
+  /* Search: */
+  width: 143px;
+  height: 50px;
+  padding: 10px 47px 11px 22px;
+}
+
+.active{
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.navigation a{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  line-height: 29px;
+  width: 74px;
+  height: 29px;
+}
+
+// main_content css
+.main_content_container{
+  grid-area: mc;
+  position: relative;
+}
+
+.main_headline{
+  /* Search Gems: */
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  color: #2C2F33;
+  letter-spacing: 1px;
+  line-height: 50px;
+}
+
+.search_headline_pos{
+  position: absolute;
+  top:203px;
+  right: 32.88px;
+  bottom: 647px;
+  left: 174px;
+  width: 651.12px;
+  height: 50px;
+}
+
+.search_box_pos{
+  position: absolute;
+  top: 299px;
+  right: 193px;
+  bottom: 512px;
+  left: 117px;
+}
+
+.search_box_container{
+  /* Search Rectangle: */
+  background: #FFFFFF;
+  border: 1px solid #5F5F5F;
+  border-radius: 100px;
+  width: 780px;
+  height: 89px;
+  position: relative;
+}
+
+input{
+  outline: none;
+  border: none;
+  background: rgba(255,255,255, 0);
+  /* Search: */
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #5F5F5F;
+  letter-spacing: 0.5px;
+  line-height: 29px;
+  padding: 0px;
+  position: absolute;
+  top: 31px;
+  right: 605px;
+  bottom: 29px;
+  left: 57px;
+}
+
+.search_icon{
+  position: absolute;
+  top: 35px;
+  left: 37.96px;
+  right: 29.96px;
+  left: 718px;
+}
