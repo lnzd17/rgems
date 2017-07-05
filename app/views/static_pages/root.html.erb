@@ -4,15 +4,19 @@
   </div>
   <div class="search_box_container search_box_pos">
     <%= form_tag(search_path, method: 'post') do %>
-      <%= text_field_tag 'qTerm', nil, placeholder: 'Search'%>
+      <%= text_field_tag 'query', nil, placeholder: 'Search'%>
       <%= image_submit_tag('magnifying-glass.png', class: 'search_icon', alt: 'Search') %>
     <% end %>
-    <!-- <input type="text" placeholder="Search" id='search_input'> -->
   </div>
-  <div class="search_results">
-    <div class="gem_name"><%= @result %></div>
-    <div class="gem_info"></div>
-    <div class="gem_deps"></div>
-  </div>
-  <div class="gem_error"></div>
+  <% if @search_result %>
+    <div class="search_results">
+      <div class="gem_name"><%= @title %></div>
+      <div class="gem_info"><%= @info %></div>
+      <div class="gem_deps"><%= @deps %></div>
+    </div>
+    <div class="error_message">
+      <%= @result_error %>
+    </div>
+  <% end %>
+
 </div>
