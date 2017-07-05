@@ -10,14 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require-tree .
+ *= require-self
  */
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 .grid{
@@ -27,8 +33,7 @@
 }
 
 
-// side_hero css
-.side_hero{
+.side-hero{
   grid-area: sh;
   background: image-url("map.png") no-repeat left top;
   width: 531px;
@@ -94,15 +99,13 @@
    background: rgba(255, 255, 255, 0.17);
  }
 
-// main_content css
-.main_content_container{
+.main-content-container{
   grid-area: mc;
   position: relative;
 }
 
 
-.main_headline{
-  /* Search Gems: */
+.main-headline{
   font-family: 'Lato-Bold';
   font-size: 40px;
   color: #2C2F33;
@@ -111,7 +114,7 @@
 }
 
 
-.headline_pos{
+.headline-pos{
   position: absolute;
   top:203px;
   right: 32.88px;
@@ -121,7 +124,7 @@
   height: 50px;
 }
 
-.search_box_pos{
+.search-box-pos{
   position: absolute;
   top: 299px;
   right: 193px;
@@ -129,8 +132,7 @@
   left: 117px;
 }
 
-.search_box_container{
-  /* Search Rectangle: */
+.search-box-container{
   background: #FFFFFF;
   border: 1px solid #5F5F5F;
   border-radius: 100px;
@@ -160,14 +162,14 @@ input:focus{
   background:rgba(255,255,255, 0);
 }
 
-.search_icon{
+.search-icon{
   position: absolute;
   top: 35px;
   right: 29.96px;
   left: 718px;
 }
 
-.search_results{
+.search-results{
   position:absolute;
   top:435px;
   right:1141px;
@@ -176,7 +178,7 @@ input:focus{
   width: 693px;
 }
 
-.gem_name{
+.gem-name{
   font-family: Lato-Semibold;
   font-size: 18px;
   color: #1F6CDE;
@@ -185,7 +187,7 @@ input:focus{
   margin-bottom: 32px;
 }
 
-.gem_name a:hover{
+.gem-name a:hover{
   color: #1F6CDE;
 }
 
@@ -198,8 +200,7 @@ input:focus{
   margin-bottom: 8px;
 }
 
-.gem_info{
-    /* An automated web acc: */
+.gem-info{
   font-family: Lato-Regular;
   font-size: 15px;
   color: #8E8E8E;
@@ -208,18 +209,15 @@ input:focus{
   margin-bottom: 29px;
 }
 
-.gem_deps{
-    /* bundler: */
+.gem-deps{
   font-family: Lato-Semibold;
   font-size: 18px;
   color: #1F6CDE;
   letter-spacing: 0.5px;
   line-height: 29px;
-  // columns: 3;
 }
 
-.no_deps{
-  /* None: */
+.no-deps{
   font-family: Lato-Regular;
   font-size: 15px;
   color: #8E8E8E;
@@ -227,19 +225,18 @@ input:focus{
   line-height: 23px;
 }
 
-.gem_deps ul{
+.gem-deps ul{
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-.gem_deps li{
+.gem-deps li{
   margin: 0px;
   padding: 0px;
 }
 
-.error_message{
-    /* Oh no! Looks like th: */
+.error-message{
   font-family: Lato-Black;
   font-size: 24px;
   color: #FF4F4F;
@@ -248,7 +245,7 @@ input:focus{
   text-align: center;
 }
 
-.error_message_pos{
+.error-message-pos{
   position:absolute;
   top: 404px;
   right: 550px;
@@ -257,15 +254,13 @@ input:focus{
   width: 659px;
 }
 
-.search_box_error{
-  /* Rectangle: */
+.search-box-error{
 background: #FFFFFF;
 border: 1px solid #FF4F4F;
 border-radius: 100px;
 }
 
-.search_text_error{
-    /* Sapphire: */
+.search-text-error{
   font-family: Lato-Regular;
   font-size: 18px;
   color: #FF4F4F;
@@ -278,7 +273,7 @@ border-radius: 100px;
   margin: 0px 8px;
 }
 
-.fav_headline_pos{
+.fav-headline-pos{
   position: absolute;
   top:203px;
   right: 32.88px;
@@ -288,9 +283,8 @@ border-radius: 100px;
   height: 50px;
 }
 
-// favorites css
 
-.favorites_container_pos{
+.favorites-container-pos{
   position: absolute;
   top: 333.73px;
   right: 1273px;
@@ -298,19 +292,19 @@ border-radius: 100px;
   left: 88px;
   width: 100%;
 }
-.favorites_container{
+.favorites-container{
   columns: 3;
   height:100%;
   width: 100%;
 }
 
-.favorites_container ul{
+.favorites-container ul{
     list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
-.favorites_container li{
+.favorites-container li{
   margin: 0px 0px 17px 0px;
   padding: 0px;
 }
