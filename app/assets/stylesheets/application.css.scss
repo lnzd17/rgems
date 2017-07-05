@@ -16,15 +16,15 @@
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+ @import url('https://fonts.googleapis.com/css?family=Lato');
 
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
-
 
 .grid{
    display:grid;
@@ -76,8 +76,6 @@
 
 
 .navigation a{
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
   font-size: 18px;
   color: #FFFFFF;
   letter-spacing: 0.5px;
@@ -96,6 +94,7 @@
 
 
  .active{
+   font-weight: 800;
    background: rgba(255, 255, 255, 0.17);
  }
 
@@ -106,7 +105,7 @@
 
 
 .main-headline{
-  font-family: 'Lato-Bold';
+  font-weight: 700;
   font-size: 40px;
   color: #2C2F33;
   letter-spacing: 1px;
@@ -145,7 +144,6 @@ input{
   outline: none;
   border: none;
   background: rgba(255,255,255, 0);
-  font-family: 'Lato', sans-serif;
   font-size: 18px;
   color: #5F5F5F;
   letter-spacing: 0.5px;
@@ -159,6 +157,13 @@ input{
 }
 
 input:focus{
+  background:rgba(255,255,255, 0);
+}
+
+input:autofill{
+  background:rgba(255,255,255, 0);
+}
+input:-webkit-autofill{
   background:rgba(255,255,255, 0);
 }
 
@@ -179,12 +184,15 @@ input:focus{
 }
 
 .gem-name{
-  font-family: Lato-Semibold;
+  margin-bottom: 32px;
+}
+
+.gem-name a{
+  font-weight: 600;
   font-size: 18px;
   color: #1F6CDE;
   letter-spacing: 0.5px;
   line-height: 29px;
-  margin-bottom: 32px;
 }
 
 .gem-name a:hover{
@@ -192,7 +200,6 @@ input:focus{
 }
 
 .title{
-  font-family: Lato-Regular;
   font-size: 15px;
   color: #2C2F33;
   letter-spacing: 0.5px;
@@ -201,7 +208,6 @@ input:focus{
 }
 
 .gem-info{
-  font-family: Lato-Regular;
   font-size: 15px;
   color: #8E8E8E;
   letter-spacing: 0.5px;
@@ -210,7 +216,6 @@ input:focus{
 }
 
 .gem-deps{
-  font-family: Lato-Semibold;
   font-size: 18px;
   color: #1F6CDE;
   letter-spacing: 0.5px;
@@ -218,12 +223,13 @@ input:focus{
 }
 
 .no-deps{
-  font-family: Lato-Regular;
   font-size: 15px;
   color: #8E8E8E;
   letter-spacing: 0.5px;
   line-height: 23px;
 }
+
+
 
 .gem-deps ul{
   list-style: none;
@@ -237,7 +243,7 @@ input:focus{
 }
 
 .error-message{
-  font-family: Lato-Black;
+  font-weight: 900;
   font-size: 24px;
   color: #FF4F4F;
   letter-spacing: 0.67px;
@@ -255,13 +261,12 @@ input:focus{
 }
 
 .search-box-error{
-background: #FFFFFF;
-border: 1px solid #FF4F4F;
-border-radius: 100px;
+  background: #FFFFFF;
+  border: 1px solid #FF4F4F;
+  border-radius: 100px;
 }
 
 .search-text-error{
-  font-family: Lato-Regular;
   font-size: 18px;
   color: #FF4F4F;
   letter-spacing: 0.5px;
