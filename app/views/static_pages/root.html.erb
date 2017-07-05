@@ -8,15 +8,33 @@
       <%= image_submit_tag('magnifying-glass.png', class: 'search_icon', alt: 'Search') %>
     <% end %>
   </div>
-  <% if @search_result %>
+  <% if @search_result && ! @result_error %>
     <div class="search_results">
-      <div class="gem_name"><%= @title %></div>
+      <div class="gem_name">
+        <a href='<%= SearchResult.gem_url(@title) %>' target="_blank"><%= @title %></a>
+        <%= image_tag('star-gray.png', class: 'star') %>
+      </div>
+      <span class="title">INFORMATION</span>
       <div class="gem_info"><%= @info %></div>
-      <div class="gem_deps"><%= @deps %></div>
+      <span class="title">DEPENDENCIES</span>
+      <div class="gem_deps">
+        <% if @deps.length > 0 %>
+          <ul>
+            <% @deps.each do |dep| %>
+              <li>
+                <a href='<%= SearchResult.gem_url(dep) %>' target="_blank"><%= dep %></a>
+                <%= image_tag('star-gray.png', class: 'star') %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <span class="no_deps">None</span>
+        <% end %>
+      </div>
     </div>
+  <% elsif @search_result %>
     <div class="error_message">
       <%= @result_error %>
     </div>
   <% end %>
-
 </div>

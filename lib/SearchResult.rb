@@ -17,6 +17,10 @@ class SearchResult
      @search_result['name'] if obj_created?
   end
 
+  def self.gem_url(gem_name)
+    Gems.info(gem_name)['project_uri']
+  end
+
   def self.info
      @search_result['info'] if obj_created?
   end

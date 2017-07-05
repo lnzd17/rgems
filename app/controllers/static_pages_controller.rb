@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 
   def root
     @search_result = SearchResult.return_result
+
     if SearchResult.result_error?
       @result_error = @search_result['error_message']
     else
