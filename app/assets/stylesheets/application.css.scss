@@ -215,6 +215,7 @@ input:focus{
   color: #1F6CDE;
   letter-spacing: 0.5px;
   line-height: 29px;
+  // columns: 3;
 }
 
 .no_deps{
@@ -277,13 +278,29 @@ border-radius: 100px;
   margin: 0px 8px;
 }
 
+.fav_headline_pos{
+  position: absolute;
+  top:203px;
+  right: 32.88px;
+  bottom: 647px;
+  left: 89px;
+  width: 651.12px;
+  height: 50px;
+}
+
 // favorites css
-.favorites_container{
+
+.favorites_container_pos{
   position: absolute;
   top: 333.73px;
   right: 1273px;
   bottom: 551.27px;
-  left: 99px;
+  left: 88px;
+  width: 100%;
+}
+.favorites_container{
+  columns: 3;
+  height:100%;
   width: 100%;
 }
 
