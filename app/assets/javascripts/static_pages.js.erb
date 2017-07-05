@@ -4,10 +4,11 @@ $( document ).ready(function() {
   $('.star').click(function(){
     const starColor = $(this).data("color");
     const gemName = $(this).data("id");
+    const gemUrl = $(this).data("url");
     if(starColor === "gray"){
       $(this).attr("src", "<%= asset_path( 'star-blue.png' ) %>");
       $(this).data("color", "blue");
-      addToFavorites(gemName);
+      addToFavorites(gemName, gemUrl);
     }else{
       $(this).attr("src", "<%= asset_path( 'star-gray.png' ) %>");
       $(this).data("color", "gray");
@@ -15,14 +16,17 @@ $( document ).ready(function() {
     }
   });
 
-  function addToFavorites(gemName) {
-    const lastRecordNum = localStorage.length;
-    const nextRecordNum = parseInt(lastRecordNum) + 1;
-    localStorage.setItem(gemName, nextRecordNum.toString());
+  function addToFavorites(gemName, gemUrl) {
+    localStorage.setItem(gemName, gemUrl);
   }
 
   function removeFromFavorites(gemName){
     localStorage.removeItem(gemName);
+    $('.favorites').children().each(function(){
+      if($(this).text() == gemName){
+        $(this).remove();
+      }
+    });
   }
 
   function rememberStarColor(){
@@ -39,6 +43,5 @@ $( document ).ready(function() {
   }
 
   rememberStarColor();
-
 
 });

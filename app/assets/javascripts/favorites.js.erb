@@ -1,0 +1,23 @@
+$( document ).ready(function() {
+  function displayFavorites(){
+    let listItems = '';
+      for(var i = 0; i < localStorage.length; i++){
+        listItems +='<li>' +
+                    '<a href="' +
+                    localStorage.getItem(localStorage.key(i)) +
+                    '" target="_blank"' +
+                    '>' +
+                    localStorage.key(i) +
+                    '</a>' +
+                    '<img src="<%= asset_path("star-blue.png") %>"' +
+                    'class="star" data-id="'+
+                    localStorage.key(i) +
+                    '"data-color = "blue">'+
+                    '</li>';
+      }
+    $('.favorites').html(listItems);
+  }
+
+  displayFavorites();
+
+});

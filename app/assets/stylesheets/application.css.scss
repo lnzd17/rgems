@@ -99,14 +99,15 @@
 
 .main_headline{
   /* Search Gems: */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato-Bold';
   font-size: 40px;
   color: #2C2F33;
   letter-spacing: 1px;
   line-height: 50px;
 }
 
-.search_headline_pos{
+
+.headline_pos{
   position: absolute;
   top:203px;
   right: 32.88px;
@@ -245,12 +246,3 @@ line-height: 29px;
 .star{
   margin-left: 8px;
 }
-
-// .no_deps{
-//     /* None: */
-//   font-family: Lato-Regular;
-//   font-size: 15px;
-//   color: #8E8E8E;
-//   letter-spacing: 0.5px;
-//   line-height: 23px;
-// }
