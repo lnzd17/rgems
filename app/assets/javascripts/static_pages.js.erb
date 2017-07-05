@@ -1,0 +1,44 @@
+
+$( document ).ready(function() {
+
+  $('.star').click(function(){
+    const starColor = $(this).data("color");
+    const gemName = $(this).data("id");
+    if(starColor === "gray"){
+      $(this).attr("src", "<%= asset_path( 'star-blue.png' ) %>");
+      $(this).data("color", "blue");
+      addToFavorites(gemName);
+    }else{
+      $(this).attr("src", "<%= asset_path( 'star-gray.png' ) %>");
+      $(this).data("color", "gray");
+      removeFromFavorites(gemName);
+    }
+  });
+
+  function addToFavorites(gemName) {
+    const lastRecordNum = localStorage.length;
+    const nextRecordNum = parseInt(lastRecordNum) + 1;
+    localStorage.setItem(gemName, nextRecordNum.toString());
+  }
+
+  function removeFromFavorites(gemName){
+    localStorage.removeItem(gemName);
+  }
+
+  function rememberStarColor(){
+    const favorites = [];
+    for(var i = 0; i < localStorage.length; i++){
+      favorites.push(localStorage.key(i));
+    }
+    $('.star').each(function(){
+      if (favorites.includes($(this).data('id'))){
+        $(this).attr("src", "<%= asset_path( 'star-blue.png' ) %>");
+        $(this).data("color", "blue");
+      }
+    });
+  }
+
+  rememberStarColor();
+
+
+});
