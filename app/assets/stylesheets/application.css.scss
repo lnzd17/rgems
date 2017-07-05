@@ -68,9 +68,7 @@
   padding: 10px 47px 11px 22px;
 }
 
-.active{
-  background: rgba(255, 255, 255, 0.17);
-}
+
 
 .navigation a{
   font-family: 'Lato', sans-serif;
@@ -89,6 +87,11 @@
  .navigation a:hover{
    color: #FFFFFF;
    text-decoration: none;
+ }
+
+
+ .active{
+   background: rgba(255, 255, 255, 0.17);
  }
 
 // main_content css

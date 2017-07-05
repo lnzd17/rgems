@@ -1,4 +1,9 @@
 $( document ).ready(function() {
+  if(location.href === 'http://localhost:3000/favorites'){
+    $('#nav_link2').addClass('active');
+    $('#nav_link1').removeClass('active')
+  }
+
   function displayFavorites(){
     let listItems = '';
       for(var i = 0; i < localStorage.length; i++){
