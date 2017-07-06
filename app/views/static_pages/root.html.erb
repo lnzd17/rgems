@@ -2,7 +2,7 @@
   <div class="main-headline headline-pos">
     Search Gems
   </div>
-  <div class="search-box-container search-box-pos">
+  <div class="search-box-container">
     <%= form_tag(search_path, method: 'post') do %>
       <%= text_field_tag 'query', nil, placeholder: 'Search' %>
       <%= image_submit_tag('magnifying-glass.png',
@@ -55,7 +55,7 @@
       </div>
     </div>
   <% elsif @search_result %>
-    <div class="error-message error-message-pos">
+    <div class="error-message">
       <%= @result_error %>
     </div>
   <% end %>
