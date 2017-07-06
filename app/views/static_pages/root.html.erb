@@ -1,7 +1,5 @@
 <div class="main-content-container">
-  <div class="main-headline headline-pos">
-    Search Gems
-  </div>
+  <div class="main-headline headline-pos">Search Gems</div>
   <div class="search-box-container search-box-pos">
     <%= form_tag(search_path, method: 'post') do %>
       <%= text_field_tag 'query', nil, placeholder: 'Search'%>
@@ -11,8 +9,12 @@
   <% if @search_result && ! @result_error %>
     <div class="search-results">
       <div class="gem-name">
-        <a href='<%= SearchResult.gem_url(@title) %>' target="_blank"><%= @title %></a>
-        <%= image_tag('star-gray.png', class: 'star', data: { id: @title , color: 'gray', url: SearchResult.gem_url(@title) }) %>
+        <a href='<%= SearchResult.gem_url(@title) %>' target="_blank"> <%= @title %> </a>
+        <%= image_tag('star-gray.png',
+                      class: 'star',
+                      data: { id: @title ,
+                      color: 'gray',
+                      url: SearchResult.gem_url(@title) }) %>
       </div>
       <div class="title">INFORMATION</div>
       <div class="gem-info"><%= @info %></div>
@@ -23,7 +25,11 @@
             <% @deps.each do |dep| %>
               <li>
                 <a href='<%= SearchResult.gem_url(dep) %>' target="_blank"><%= dep %></a>
-                <%= image_tag('star-gray.png', class: 'star', data: { id: dep, color: 'gray', url: SearchResult.gem_url(@title) }) %>
+                <%= image_tag('star-gray.png',
+                              class: 'star',
+                              data: { id: dep,
+                              color: 'gray',
+                              url: SearchResult.gem_url(dep) }) %>
               </li>
             <% end %>
           </ul>
