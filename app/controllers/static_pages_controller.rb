@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  require 'SearchResult'
+  require 'search_result'
 
   def root
     @search_result = SearchResult.return_result
@@ -17,13 +17,12 @@ class StaticPagesController < ApplicationController
     begin
       api_call = Gems.info(params[:query])
     rescue JSON::ParserError
-      api_call = {'error_message' => "Oh no! Looks like that gem can't be found."}
+      api_call = { 'error_message' =>
+                   "Oh no! Looks like that gem can't be found." }
     end
     SearchResult.store_search_result(api_call)
     redirect_to root_path
   end
 
-  def favorites
-  end
-
+  def favorites; end
 end
