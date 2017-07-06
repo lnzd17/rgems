@@ -1,6 +1,6 @@
-# processes search results from 'Gems' api call
+# processes search result from 'Gems' api call
 class SearchResult
-  attr_accessor :search_result
+  attr_reader :search_result
 
   def self.store_search_result(search_result)
     @search_result = search_result

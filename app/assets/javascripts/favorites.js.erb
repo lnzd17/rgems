@@ -1,10 +1,5 @@
 $( document ).ready(function() {
-
-  if( location.href === 'http://localhost:3000/favorites' ) {
-    $('#nav-link2').addClass('active');
-    $('#nav-link1').removeClass('active');
-  }
-
+  // display saved favorites
   function displayFavorites() {
     let listItems = '';
 
@@ -28,6 +23,13 @@ $( document ).ready(function() {
     $('.favorites').html(listItems);
   }
 
+  // method call upon page load
   displayFavorites();
+
+  // add active class to 'favorites'
+  if( location.href === 'http://localhost:3000/favorites' ) {
+    $('#nav-link2').addClass('active');
+    $('#nav-link1').removeClass('active');
+  }
 
 });

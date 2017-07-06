@@ -1,10 +1,5 @@
 $( document ).ready(function() {
-
-  if( location.href === 'http://localhost:3000/' ) {
-    $('#nav-link1').addClass('active');
-    $('#nav-link2').removeClass('active');
-  }
-
+  //click function for .star
   $('.star').click(function() {
     const starColor = $(this).data('color');
     const gemName = $(this).data('id');
@@ -24,6 +19,7 @@ $( document ).ready(function() {
     }
   });
 
+  //helper functions
   function addToFavorites(gemName, gemUrl) {
     localStorage.setItem(gemName, gemUrl);
   }
@@ -38,6 +34,7 @@ $( document ).ready(function() {
     });
   }
 
+  //compares .star data to 'favorites' in localStorage
   function rememberStarColor() {
     const favorites = [];
 
@@ -53,6 +50,13 @@ $( document ).ready(function() {
     });
   }
 
+  //method call upon page load
   rememberStarColor();
+
+  // add active class to 'search'
+  if( location.href === 'http://localhost:3000/' ) {
+    $('#nav-link1').addClass('active');
+    $('#nav-link2').removeClass('active');
+  }
 
 });

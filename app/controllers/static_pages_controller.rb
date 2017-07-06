@@ -20,7 +20,9 @@ class StaticPagesController < ApplicationController
       api_call = { 'error_message' =>
                    "Oh no! Looks like that gem can't be found." }
     end
+
     SearchResult.store_search_result(api_call)
+
     redirect_to root_path
   end
 
