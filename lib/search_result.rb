@@ -10,12 +10,12 @@ class SearchResult
     @search_result
   end
 
-  def self.obj_created?
+  def self.result_created?
     @search_result.nil? ? false : true
   end
 
   def self.title
-    @search_result['name'] if obj_created?
+    @search_result['name'] if result_created?
   end
 
   def self.gem_url(gem_name)
@@ -23,17 +23,17 @@ class SearchResult
   end
 
   def self.info
-    @search_result['info'] if obj_created?
+    @search_result['info'] if result_created?
   end
 
   def self.deps
-    if obj_created?
+    if result_created?
       @search_result['dependencies']['development'].map { |d| d['name'] }
     end
   end
 
   def self.result_error?
-    if obj_created?
+    if result_created?
       @search_result.key?('error_message') ? true : false
     end
   end
