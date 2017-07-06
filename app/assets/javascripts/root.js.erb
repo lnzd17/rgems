@@ -1,4 +1,15 @@
 $( document ).ready(function() {
+  //error styling upon search error
+  function errorStyling() {
+     const errorMessage = $('.error-message').text();
+     if( errorMessage ) {
+       $('.search-box-container').removeClass('search-box-no-error');
+       $('.search-box-container').addClass('search-box-error');
+       $('input').css('color', 'rgb(255, 79, 79)');
+       $('.search-icon').attr('src',"<%= asset_path( 'red_search_icon.svg' ) %>" );
+     }
+  }
+
   //click function for .star
   $('.star').click(function() {
     const starColor = $(this).data('color');
@@ -50,8 +61,9 @@ $( document ).ready(function() {
     });
   }
 
-  //method call upon page load
+  //methods called upon page load
   rememberStarColor();
+  errorStyling();
 
   // add active class to 'search'
   if( location.href === 'http://localhost:3000/' ) {

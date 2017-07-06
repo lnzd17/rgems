@@ -1,9 +1,14 @@
 # processes search result from 'Gems' api call
 class SearchResult
-  attr_reader :search_result
+  attr_reader :search_result, :query_tem
 
-  def self.store_search_result(search_result)
+  def self.store_search_result(search_result, query_term = nil)
     @search_result = search_result
+    @query_term = query_term
+  end
+
+  def self.return_query_term
+    @query_term
   end
 
   def self.return_result

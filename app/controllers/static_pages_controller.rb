@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
                    "Oh no! Looks like that gem can't be found." }
     end
 
-    SearchResult.store_search_result(api_call)
+    SearchResult.store_search_result(api_call, params[:query])
 
     redirect_to root_path
   end

@@ -57,7 +57,6 @@ li{
   left: 394px;
 }
 
-
 .navigation ul {
   position: absolute;
   top: 370px;
@@ -121,9 +120,6 @@ li{
 }
 
 .search-box-container {
-  background: #FFFFFF;
-  border: 1px solid #5F5F5F;
-  border-radius: 100px;
   width: 780px;
   height: 89px;
   position: absolute;
@@ -131,15 +127,22 @@ li{
   left: 117px;
 }
 
+.search-box-no-error{
+  background: #FFFFFF;
+  border: 1px solid #5F5F5F;
+  border-radius: 100px;
+
+}
+
 input {
   outline: none;
   border: none;
   background: rgba(255,255,255, 0);
-  font-size: 18px;
-  color: #5F5F5F;
   position: absolute;
   top: 31px;
   left: 57px;
+  font-size: 18px;
+  color: #5F5F5F;
 }
 
 .search-icon {
@@ -179,13 +182,6 @@ input {
   margin-bottom: 29px;
 }
 
-.gem-deps {
-  font-size: 18px;
-  color: #1F6CDE;
-  line-height: 29px;
-}
-
-
 .error-message {
   font-weight: 900;
   font-size: 24px;
@@ -205,13 +201,6 @@ input {
   border-radius: 100px;
 }
 
-.search-text-error {
-  font-size: 18px;
-  color: #FF4F4F;
-  letter-spacing: 0.5px;
-  line-height: 29px;
-}
-
 .star {
   margin: 0 8px;
 }
@@ -226,14 +215,13 @@ input {
   height: 50px;
 }
 
-
 .favorites-container {
   position: absolute;
   top: 333.73px;
   left: 88px;
   columns: 3;
   height: 100%;
-  width: 100%;
+  width: 80%;
 }
 
 .favorites-container li {

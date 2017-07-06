@@ -5,7 +5,13 @@ include TestData
 
 RSpec.describe 'SearchResult' do
   before(:each) do
-    SearchResult.store_search_result(GEM_RESULT)
+    SearchResult.store_search_result(GEM_RESULT, 'cucumber')
+  end
+
+  describe 'return_query_term' do
+    it 'returns stored query_term' do
+      expect(SearchResult.return_query_term).to eq('cucumber')
+    end
   end
 
   describe 'return_result' do
