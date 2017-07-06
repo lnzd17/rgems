@@ -13,96 +13,97 @@
  *= require-tree .
  *= require-self
  */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import url( 'https://fonts.googleapis.com/css?family=Lato');
 
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
- @import url('https://fonts.googleapis.com/css?family=Lato');
-
-
-
-
-body{
+body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-.grid{
-   display:grid;
-   grid-template-columns: 531px 1389px;
-   grid-template-areas: "sh mc";
+.grid {
+  display: grid;
+  grid-template-columns: 531px 1389px;
+  grid-template-areas: "sh mc";
 }
 
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-.side-hero{
+li{
+  padding: 0;
+  margin: 0;
+}
+/***************************
+        Side Nav
+***************************/
+
+.side-hero {
   grid-area: sh;
   background: image-url("map.png") no-repeat left top;
   width: 531px;
   height: 900px;
 }
 
-.logo{
+.logo {
   position: absolute;
   width: 89px;
   height: 15px;
   top: 44px;
   left: 394px;
-
 }
 
-.navigation{
+.navigation {
   position: relative;
 }
 
-.navigation ul{
+.navigation ul {
   position: absolute;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
   top: 370px;
-  right: 0px;
-  bottom:480px;
   left: 389px;
 }
 
-.navigation li{
+.navigation li {
   /* Search: */
   width: 143px;
   height: 50px;
   padding: 10px 47px 11px 22px;
 }
 
-
-
-.navigation a{
+.navigation a {
   font-size: 18px;
   color: #FFFFFF;
   letter-spacing: 0.5px;
   line-height: 29px;
   width: 74px;
   height: 29px;
-   text-decoration: none;
-   padding: 0px;
-   margin: 0px;
+  text-decoration: none;
 }
 
- .navigation a:hover{
-   color: #FFFFFF;
-   text-decoration: none;
- }
+.navigation a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
+.active {
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.17);
+}
 
- .active{
-   font-weight: 800;
-   background: rgba(255, 255, 255, 0.17);
- }
+/***************************
+    Main Content - Search
+ ***************************/
 
-.main-content-container{
+.main-content-container {
   grid-area: mc;
   position: relative;
 }
 
-
-.main-headline{
+.main-headline {
   font-weight: 700;
   font-size: 40px;
   color: #2C2F33;
@@ -110,22 +111,21 @@ body{
   line-height: 50px;
 }
 
-
-.headline-pos{
+.headline-pos {
   position: absolute;
-  top:203px;
+  top: 203px;
   left: 174px;
   width: 651.12px;
   height: 50px;
 }
 
-.search-box-pos{
+.search-box-pos {
   position: absolute;
   top: 299px;
   left: 117px;
 }
 
-.search-box-container{
+.search-box-container {
   background: #FFFFFF;
   border: 1px solid #5F5F5F;
   border-radius: 100px;
@@ -134,7 +134,7 @@ body{
   position: relative;
 }
 
-input{
+input {
   outline: none;
   border: none;
   background: rgba(255,255,255, 0);
@@ -142,41 +142,33 @@ input{
   color: #5F5F5F;
   letter-spacing: 0.5px;
   line-height: 29px;
-  padding: 0px;
   position: absolute;
   top: 31px;
   left: 57px;
 }
 
-input:focus{
-  background:rgba(255,255,255, 0);
+input:focus {
+  background: rgba(255,255,255, 0);
 }
 
-input:autofill{
-  background:rgba(255,255,255, 0);
-}
-input:-webkit-autofill{
-  background:rgba(255,255,255, 0);
-}
-
-.search-icon{
+.search-icon {
   position: absolute;
   top: 35px;
   left: 718px;
 }
 
-.search-results{
-  position:absolute;
-  top:435px;
-  left:172px;
+.search-results {
+  position: absolute;
+  top: 435px;
+  left: 172px;
   width: 693px;
 }
 
-.gem-name{
+.gem-name {
   margin-bottom: 32px;
 }
 
-.gem-name a{
+.gem-name a {
   font-weight: 600;
   font-size: 18px;
   color: #1F6CDE;
@@ -184,11 +176,11 @@ input:-webkit-autofill{
   line-height: 29px;
 }
 
-.gem-name a:hover{
+.gem-name a:hover {
   color: #1F6CDE;
 }
 
-.title{
+.title {
   font-size: 15px;
   color: #2C2F33;
   letter-spacing: 0.5px;
@@ -196,7 +188,7 @@ input:-webkit-autofill{
   margin-bottom: 8px;
 }
 
-.gem-info{
+.gem-info {
   font-size: 15px;
   color: #8E8E8E;
   letter-spacing: 0.5px;
@@ -204,34 +196,21 @@ input:-webkit-autofill{
   margin-bottom: 29px;
 }
 
-.gem-deps{
+.gem-deps {
   font-size: 18px;
   color: #1F6CDE;
   letter-spacing: 0.5px;
   line-height: 29px;
 }
 
-.no-deps{
+.no-deps {
   font-size: 15px;
   color: #8E8E8E;
   letter-spacing: 0.5px;
   line-height: 23px;
 }
 
-
-
-.gem-deps ul{
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.gem-deps li{
-  margin: 0px;
-  padding: 0px;
-}
-
-.error-message{
+.error-message {
   font-weight: 900;
   font-size: 24px;
   color: #FF4F4F;
@@ -240,59 +219,53 @@ input:-webkit-autofill{
   text-align: center;
 }
 
-.error-message-pos{
-  position:absolute;
+.error-message-pos {
+  position: absolute;
   top: 404px;
-  left:179px;
+  left: 179px;
   width: 659px;
 }
 
-.search-box-error{
+.search-box-error {
   background: #FFFFFF;
   border: 1px solid #FF4F4F;
   border-radius: 100px;
 }
 
-.search-text-error{
+.search-text-error {
   font-size: 18px;
   color: #FF4F4F;
   letter-spacing: 0.5px;
   line-height: 29px;
 }
 
-
-.star{
-  margin: 0px 8px;
+.star {
+  margin: 0 8px;
 }
-
-.fav-headline-pos{
+/***************************
+    Main Content - Favorites
+ ***************************/
+.fav-headline-pos {
   position: absolute;
-  top:203px;
+  top: 203px;
   left: 89px;
   width: 651.12px;
   height: 50px;
 }
 
-
-.favorites-container-pos{
+.favorites-container-pos {
   position: absolute;
   top: 333.73px;
   left: 88px;
   width: 100%;
 }
-.favorites-container{
+
+.favorites-container {
   columns: 3;
-  height:100%;
+  height: 100%;
   width: 100%;
 }
 
-.favorites-container ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-.favorites-container li{
-  margin: 0px 0px 17px 0px;
-  padding: 0px;
+.favorites-container li {
+  margin: 0 0 17px 0;
 }
