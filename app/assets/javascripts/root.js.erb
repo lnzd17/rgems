@@ -1,22 +1,25 @@
-
 $( document ).ready(function() {
 
-  if(location.href === 'http://localhost:3000/'){
+  if( location.href === 'http://localhost:3000/' ) {
     $('#nav-link1').addClass('active');
     $('#nav-link2').removeClass('active');
   }
 
-  $('.star').click(function(){
-    const starColor = $(this).data("color");
-    const gemName = $(this).data("id");
-    const gemUrl = $(this).data("url");
-    if(starColor === "gray"){
-      $(this).attr("src", "<%= asset_path( 'star-blue.png' ) %>");
-      $(this).data("color", "blue");
+  $('.star').click(function() {
+    const starColor = $(this).data('color');
+    const gemName = $(this).data('id');
+    const gemUrl = $(this).data('url');
+
+    if( starColor === 'gray' ) {
+      $(this).attr('src', "<%= asset_path( 'star-blue.png' ) %>");
+      $(this).data('color', 'blue');
+
       addToFavorites(gemName, gemUrl);
-    }else{
-      $(this).attr("src", "<%= asset_path( 'star-gray.png' ) %>");
-      $(this).data("color", "gray");
+
+    } else {
+      $(this).attr('src', "<%= asset_path( 'star-gray.png' ) %>");
+      $(this).data('color', 'gray');
+
       removeFromFavorites(gemName);
     }
   });
@@ -25,24 +28,27 @@ $( document ).ready(function() {
     localStorage.setItem(gemName, gemUrl);
   }
 
-  function removeFromFavorites(gemName){
+  function removeFromFavorites(gemName) {
     localStorage.removeItem(gemName);
-    $('.favorites').children().each(function(){
-      if($(this).text() == gemName){
+
+    $('.favorites').children().each(function() {
+      if( $(this).text() == gemName ) {
         $(this).remove();
       }
     });
   }
 
-  function rememberStarColor(){
+  function rememberStarColor() {
     const favorites = [];
-    for(var i = 0; i < localStorage.length; i++){
-      favorites.push(localStorage.key(i));
+
+    for( var i = 0; i < localStorage.length; i++ ) {
+      favorites.push( localStorage.key(i) );
     }
-    $('.star').each(function(){
-      if (favorites.includes($(this).data('id'))){
-        $(this).attr("src", "<%= asset_path( 'star-blue.png' ) %>");
-        $(this).data("color", "blue");
+
+    $('.star').each(function() {
+      if ( favorites.includes( $(this).data('id') ) ) {
+        $(this).attr('src', "<%= asset_path( 'star-blue.png' ) %>");
+        $(this).data('color', 'blue');
       }
     });
   }

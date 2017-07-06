@@ -1,40 +1,56 @@
 <div class="main-content-container">
-  <div class="main-headline headline-pos">Search Gems</div>
+  <div class="main-headline headline-pos">
+    Search Gems
+  </div>
   <div class="search-box-container search-box-pos">
     <%= form_tag(search_path, method: 'post') do %>
-      <%= text_field_tag 'query', nil, placeholder: 'Search'%>
-      <%= image_submit_tag('magnifying-glass.png', class: 'search-icon', alt: 'Search') %>
+      <%= text_field_tag 'query', nil, placeholder: 'Search' %>
+      <%= image_submit_tag('magnifying-glass.png',
+                            class: 'search-icon',
+                            alt: 'Search'
+                          )
+      %>
     <% end %>
   </div>
   <% if @search_result && ! @result_error %>
     <div class="search-results">
       <div class="gem-name">
-        <a href='<%= SearchResult.gem_url(@title) %>' target="_blank"> <%= @title %> </a>
+        <a href=' <%= SearchResult.gem_url(@title) %> ' target="_blank">
+          <%= @title %>
+        </a>
         <%= image_tag('star-gray.png',
                       class: 'star',
                       data: { id: @title ,
-                      color: 'gray',
-                      url: SearchResult.gem_url(@title) }) %>
+                              color: 'gray',
+                              url: SearchResult.gem_url(@title)
+                            }
+                      )
+        %>
       </div>
-      <div class="title">INFORMATION</div>
-      <div class="gem-info"><%= @info %></div>
-      <div class="title">DEPENDENCIES</div>
+      <div class="title"> INFORMATION </div>
+      <div class="gem-info"> <%= @info %> </div>
+      <div class="title"> DEPENDENCIES </div>
       <div class="gem-deps">
         <% if @deps.length > 0 %>
           <ul>
             <% @deps.each do |dep| %>
               <li>
-                <a href='<%= SearchResult.gem_url(dep) %>' target="_blank"><%= dep %></a>
+                <a href=' <%= SearchResult.gem_url(dep) %> ' target="_blank">
+                  <%= dep %>
+                </a>
                 <%= image_tag('star-gray.png',
                               class: 'star',
                               data: { id: dep,
-                              color: 'gray',
-                              url: SearchResult.gem_url(dep) }) %>
+                                      color: 'gray',
+                                      url: SearchResult.gem_url(dep)
+                                    }
+                              )
+                %>
               </li>
             <% end %>
           </ul>
         <% else %>
-          <span class="no-deps">None</span>
+          <span class="no-deps"> None </span>
         <% end %>
       </div>
     </div>
