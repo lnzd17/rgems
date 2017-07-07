@@ -223,6 +223,8 @@ input {
   top: 333.73px;
   left: 88px;
   columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
   height: 100%;
   width: 80%;
 }
