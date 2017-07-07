@@ -5,26 +5,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="grid">
-      <div class="side-hero">
-        <div class="logo-container">
-          <%= image_tag('teachable-logo.png', class: 'logo') %>
-        </div>
-        <div class="navigation">
-          <ul>
-            <li id="nav-link1">
-              <%= link_to 'Search', root_path %>
-            </li>
-            <li id="nav-link2">
-              <%= link_to 'Favorites', favorites_path  %>
-            </li>
-          </ul>
-        </div>
-      </div>
+
       <%= yield %>
-      <!-- end of .grid -->
-    </div>
+      <!-- end of .container-fluid and .row -->
+
   </body>
 </html>

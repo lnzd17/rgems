@@ -1,62 +1,85 @@
-<div class="main-content-container">
-  <div class="main-headline headline-pos">
-    Search Gems
-  </div>
-  <div class="search-box-container search-box-no-error">
-    <%= form_tag(search_path, method: 'post') do %>
-      <%= text_field_tag 'query', SearchResult.return_query_term , placeholder: 'Search' %>
-      <%= image_submit_tag('magnifying-glass.png',
-                            class: 'search-icon',
-                            alt: 'Search'
-                          )
-      %>
-    <% end %>
-  </div>
-  <% if @search_result && ! @result_error %>
-    <div class="search-results">
-      <div class="gem-name">
-        <a href=' <%= SearchResult.gem_url(@title) %> ' target="_blank">
-          <%= @title %>
-        </a>
-        <%= image_tag('star-gray.png',
-                      class: 'star',
-                      data: { id: @title ,
-                              color: 'gray',
-                              url: SearchResult.gem_url(@title)
-                            }
-                      )
-        %>
-      </div>
-      <div class="title"> INFORMATION </div>
-      <div class="gem-info"> <%= @info %> </div>
-      <div class="title"> DEPENDENCIES </div>
-      <div class="gem-deps gem-name">
-        <% if @deps.length > 0 %>
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <div class="side-hero">
+        <div class="logo-container">
+          <%= image_tag('teachable-logo.png', class: 'logo') %>
+        </div>
+        <div class="navigation">
           <ul>
-            <% @deps.each do |dep| %>
-              <li>
-                <a href=' <%= SearchResult.gem_url(dep) %> ' target="_blank">
-                  <%= dep %>
+            <li id="nav-link1">
+              <%= link_to 'Search', root_path %>
+            </li>
+            <li id="nav-link2">
+              <%= link_to 'Favorites', favorites_path  %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <div class="main-content-container">
+        <div class="main-headline headline-pos">
+          Search Gems
+        </div>
+        <div class="search-box-container search-box-no-error">
+          <%= form_tag(search_path, method: 'post') do %>
+            <%= text_field_tag 'query', SearchResult.return_query_term , placeholder: 'Search' %>
+            <%= image_submit_tag('magnifying-glass.png',
+                                  class: 'search-icon',
+                                  alt: 'Search'
+                                )
+            %>
+          <% end %>
+        </div>
+          <% if @search_result && ! @result_error %>
+            <div class="search-results">
+              <div class="gem-name">
+                <a href=' <%= SearchResult.gem_url(@title) %> ' target="_blank">
+                  <%= @title %>
                 </a>
                 <%= image_tag('star-gray.png',
                               class: 'star',
-                              data: { id: dep,
+                              data: { id: @title ,
                                       color: 'gray',
-                                      url: SearchResult.gem_url(dep)
+                                      url: SearchResult.gem_url(@title)
                                     }
                               )
                 %>
-              </li>
-            <% end %>
-          </ul>
-        <% else %>
-          <span class="no-deps"> None </span>
-        <% end %>
+              </div>
+              <div class="title"> INFORMATION </div>
+              <div class="gem-info"> <%= @info %> </div>
+              <div class="title"> DEPENDENCIES </div>
+              <div class="gem-deps gem-name">
+                <% if @deps.length > 0 %>
+                  <ul>
+                    <% @deps.each do |dep| %>
+                      <li>
+                        <a href=' <%= SearchResult.gem_url(dep) %> ' target="_blank">
+                          <%= dep %>
+                        </a>
+                        <%= image_tag('star-gray.png',
+                                      class: 'star',
+                                      data: { id: dep,
+                                              color: 'gray',
+                                              url: SearchResult.gem_url(dep)
+                                            }
+                                      )
+                        %>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% else %>
+                  <span class="no-deps"> None </span>
+                <% end %>
+              </div>
+            </div>
+          <% elsif @search_result %>
+            <div class="error-message">
+              <%= @result_error %>
+            </div>
+          <% end %>
       </div>
     </div>
-  <% elsif @search_result %>
-    <div class="error-message">
-      <%= @result_error %>
-    </div>
-  <% end %>
+  </div>
 </div>

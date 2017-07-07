@@ -22,12 +22,6 @@ body {
   font-weight: 400;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 531px 1389px;
-  grid-template-areas: "sh mc";
-}
-
 ul{
   list-style: none;
   padding: 0;
@@ -38,33 +32,43 @@ li{
   padding: 0;
   margin: 0;
 }
+
+.container-fluid{
+  margin: 0px;
+  padding: 0px;
+}
+
+.row{
+  padding: 0px;
+  margin: 0px;
+}
+
+.col{
+  padding: 0px;
+  margin: 0px;
+}
 /***************************
         Side Nav
 ***************************/
 
 .side-hero {
-  grid-area: sh;
-  background: image-url("map.png") no-repeat left top;
-  width: 531px;
-  height: 900px;
+  background: image-url("map.png") center center ;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .logo {
-  position: absolute;
   width: 89px;
   height: 15px;
-  top: 44px;
-  left: 394px;
+  margin: 25px;
 }
 
-.navigation ul {
-  position: absolute;
-  top: 370px;
-  left: 389px;
+.navigation{
+  margin-top: 50%;
+  float: right;
 }
 
 .navigation li {
-  /* Search: */
   width: 143px;
   height: 50px;
   padding: 10px 47px 11px 22px;
@@ -95,12 +99,11 @@ li{
  ***************************/
 
 .main-content-container {
-  grid-area: mc;
-  position: relative;
   font-size: 15px;
   color: #8E8E8E;
   letter-spacing: 0.5px;
   line-height: 23px;
+  margin: 100px 0 0 100px;
 }
 
 .main-headline {
@@ -109,53 +112,39 @@ li{
   color: #2C2F33;
   letter-spacing: 1px;
   line-height: 50px;
+  margin:0 0 40px 50px;
 }
 
 .headline-pos {
-  position: absolute;
-  top: 203px;
-  left: 174px;
-  width: 651.12px;
   height: 50px;
 }
 
 .search-box-container {
-  width: 780px;
   height: 89px;
-  position: absolute;
-  top: 299px;
-  left: 117px;
+  width: 80%;
+  margin: 0 0 50px 0;
 }
 
 .search-box-no-error{
   background: #FFFFFF;
   border: 1px solid #5F5F5F;
   border-radius: 100px;
-
 }
 
-input {
+input[type=text] {
   outline: none;
   border: none;
   background: rgba(255,255,255, 0);
-  position: absolute;
-  top: 31px;
-  left: 57px;
   font-size: 18px;
   color: #5F5F5F;
-}
-
-.search-icon {
-  position: absolute;
-  top: 35px;
-  left: 718px;
+  line-height: 89px;
+  margin:0 0 0 50px;
+  width: 80%;
 }
 
 .search-results {
-  position: absolute;
-  top: 435px;
-  left: 172px;
-  width: 693px;
+  width: 80%;
+  margin-left: 50px;
 }
 
 .gem-name {
@@ -179,7 +168,12 @@ input {
 }
 
 .gem-info {
+  width: 80%;
   margin-bottom: 29px;
+}
+
+.gem-deps{
+  columns: 3;
 }
 
 .gem-deps li{
@@ -193,10 +187,7 @@ input {
   letter-spacing: 0.67px;
   line-height: 29px;
   text-align: center;
-  position: absolute;
-  top: 404px;
-  left: 179px;
-  width: 659px;
+  width: 80%;
 }
 
 .search-box-error {
@@ -212,22 +203,111 @@ input {
     Main Content - Favorites
  ***************************/
 .fav-headline-pos {
-  position: absolute;
-  top: 203px;
-  left: 89px;
-  width: 651.12px;
   height: 50px;
+  margin: 0 0 35px 0;
 }
 
 .favorites-container {
-  position: absolute;
-  top: 333.73px;
-  left: 88px;
   columns: 3;
   height: 100%;
-  width: 80%;
+  width: 90%;
 }
 
 .favorites-container li {
   margin: 0 0 17px 0;
+}
+
+
+/***************************
+    Media Query
+ ***************************/
+@media (max-width: 576px) {
+
+  .side-hero {
+    min-height: 200px;
+  }
+
+  .navigation{
+    margin-top: 20px;
+    float: right;
+  }
+
+  .main-content-container {
+    font-size: 15px;
+    color: #8E8E8E;
+    letter-spacing: 0.5px;
+    line-height: 23px;
+    margin: 10px;
+  }
+
+  .main-headline {
+    font-weight: 700;
+    font-size: 40px;
+    color: #2C2F33;
+    letter-spacing: 1px;
+    line-height: 50px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .search-box-container {
+    height: 45px;
+    width: 60%;
+    margin: 10px 10px 20px 0px;
+  }
+
+  input[type=text] {
+    outline: none;
+    border: none;
+    background: rgba(255,255,255, 0);
+    font-size: 12px;
+    color: #5F5F5F;
+    line-height: 45px;
+    margin:0 0 0 10px;
+    width: 70%;
+  }
+
+  .search-icon{
+    width: 12px;
+  }
+
+  .search-results {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .gem-deps{
+    columns: auto;
+  }
+
+  .gem-info {
+    width: 90%;
+    margin-bottom: 29px;
+  }
+
+  .error-message {
+    font-weight: 900;
+    font-size: 24px;
+    color: #FF4F4F;
+    letter-spacing: 0.67px;
+    line-height: 29px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .fav-headline-pos {
+    height: 50px;
+    margin: 0 0 50px 0;
+  }
+
+  .favorites-container {
+    columns: auto;
+    height: 100%;
+    width: 90%;
+  }
+
+  .favorites-container li {
+    margin: 0 0 17px 0;
+  }
+
 }
